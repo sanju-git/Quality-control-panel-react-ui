@@ -1,0 +1,14 @@
+[
+    {
+        "name":"2.0L Block",
+        "imageSrc":"b1.png"
+    },
+    {
+        "name":"1.2L Block",
+        "imageSrc":"b2.png"
+    },
+    {
+        "name":"1.2L Head",
+        "imageSrc":"b3.png"
+    }
+]

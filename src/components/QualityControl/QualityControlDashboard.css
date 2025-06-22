@@ -1,0 +1,21 @@
+.title{
+ background-color: #eaeaea;
+ height: 3.3em;
+ padding: 10px;
+ box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.qd-cards{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1rem;
+    height: 28em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    margin-top: 10px;
+    background-color: #eaeaea;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}

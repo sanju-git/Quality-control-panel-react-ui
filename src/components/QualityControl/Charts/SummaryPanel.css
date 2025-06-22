@@ -1,0 +1,14 @@
+.summary-panel-card{
+ background-color: #eaeaea;
+ padding: 1em;
+ height: 10em;
+ width: 35%;
+ box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.summary-panel-container{
+    justify-content: space-evenly;
+}
+.summary-panel-quality-card{
+    padding: 10px;
+    width: 33%;
+}

@@ -3,50 +3,36 @@ import "./SummaryPanel.css";
 
 const SummaryPanel = ({ totalProduced, qcFailed, failureRate }) => (
   <div className="summary-panel-card">
-    <div>
-      <h3 className="text-center">Overall Quality</h3>
-    </div>
+    <h5 className="text-center">Overall Quality</h5>
+
     <div
-      className="my-1"
+      className="quality-bar my-2"
       style={{
-        height: "5px",
-        width: "relative",
         background: failureRate > 50 ? "#EA2F14" : "#5CB338",
       }}
     ></div>
-    <div className="summary-panel-container d-flex mt-2">
-      <div
-        className="summary-panel-quality-card text-center"
-        style={{ borderRight: "2px solid grey" }}
-      >
+
+    <div className="row text-center mt-3 g-0">
+      <div className="col-12 col-md-4 summary-panel-quality-card border-md-end">
         <div>{totalProduced}</div>
         <div className="mt-1">
-          <span>
-            <strong
-              style={{ color: totalProduced > 50 ? "#5CB338" : "#EA2F14" }}
-            >
-              Total Produced
-            </strong>
-          </span>
+          <strong
+            style={{ color: totalProduced > 50 ? "#5CB338" : "#EA2F14" }}
+          >
+            Total Produced
+          </strong>
         </div>
       </div>
-      <div
-        className="summary-panel-quality-card text-center"
-        style={{ borderRight: "2px solid grey" }}
-      >
+      <div className="col-12 col-md-4 summary-panel-quality-card border-md-end">
         <div>{qcFailed}</div>
         <div className="mt-1">
-          <span>
-            <strong>QC Failed</strong>
-          </span>
+          <strong>QC Failed</strong>
         </div>
       </div>
-      <div className="summary-panel-quality-card text-center">
+      <div className="col-12 col-md-4 summary-panel-quality-card">
         <div>{failureRate}%</div>
         <div className="mt-1">
-          <span>
-            <strong>Failure Rate</strong>
-          </span>
+          <strong>Failure Rate</strong>
         </div>
       </div>
     </div>

@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import SummaryPanel from "./Charts/SummaryPanel";
 import OperationCard from "./Charts/OperationCard";
 import GaugeChart from "./Charts/GuageChart";
 import QualityDasboardFilters from "./QualityDasbhoardFilters";
 import "./QualityControlDashboard.css";
 import { ReactComponent as SettingsIcon } from "./../../assets/icons/settings-icon.svg";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const dataJSON = {
   overallQuality: {
@@ -63,55 +63,70 @@ const dataJSON = {
       failureRate: "8%",
       statusColor: "#EA2F14",
     },
+    {
+      opCode: "OP 120",
+      totalProduced: 120,
+      qcFailed: 10,
+      failureRate: "8%",
+      statusColor: "#EA2F14",
+    },
+    {
+      opCode: "OP 120",
+      totalProduced: 120,
+      qcFailed: 10,
+      failureRate: "8%",
+      statusColor: "#EA2F14",
+    },
   ],
 };
 
 const Dashboard = () => {
   const { gauge, summary } = dataJSON.overallQuality;
-//   const [OPName, SetOPName] = useState(null);
-
   const navigate = useNavigate();
   const location = useLocation();
 
   const openOPCardChart = (opCardName) => {
-    // SetOPName(opCardName);
     const newPath = `${location.pathname.replace(/\/$/, "")}/${opCardName}`;
     navigate(newPath);
   };
 
-  //   const openOPCardChart = (opCardName) => {
-  //     SetOPName(opCardName);
-  //     navigate("/" + opCardName);
-  //   };
-  //   const handleClick = (page) => {
-  //     // setShowNavigationTabs(true);
-  //     if (page === "pt") {
-  //       navigate("/part/" + blockName);
-  //     } else if (page === "qd") {
-  //       navigate("/quality-dashboard/" + blockName);
-  //     }
-  //   };
+  const showPartHistory = () => {
+    const newPath = `${location.pathname.replace(/\/$/, "")}/part-history`;
+    navigate(newPath);
+  };
 
   return (
-    <div style={{ padding: "1rem", fontFamily: "Arial" }}>
-      <div style={{ display: "flex", gap: "2rem" }}>
-        <GaugeChart
-          value={gauge.value}
-          thresholds={gauge.thresholds}
-          colors={gauge.colors}
-        />
-        <SummaryPanel {...summary} />
-        <div style={{ width: "45%" }}>
-          <QualityDasboardFilters />
-          <div className="title mt-1 d-flex align-items-center justify-content-center">
-            <SettingsIcon width="30" height="30" />
-            &nbsp;
-            <h5>Part history</h5>
+    <div className="container-fluid py-3" style={{ fontFamily: "Arial" }}>
+      <div className="row g-4 d-flex align-items-stretch">
+        <div className="col-12 col-md-4 h-100">
+          <div className="h-100">
+            <GaugeChart
+              value={gauge.value}
+              thresholds={gauge.thresholds}
+              colors={gauge.colors}
+            />
+          </div>
+        </div>
+        <div className="col-12 col-md-4 h-100">
+          <div className="h-100">
+            <SummaryPanel {...summary} />
+          </div>
+        </div>
+        <div className="col-12 col-md-4 h-100">
+          <div className="h-100 d-flex flex-column justify-content-between">
+            <QualityDasboardFilters />
+            <div
+              onClick={() => showPartHistory()}
+              className="title mt-2 d-flex align-items-center justify-content-center cursor-pointer"
+            >
+              <SettingsIcon width="30" height="30" />
+              &nbsp;<h5 className="mb-0">Part history</h5>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="qd-cards">
+      <div className="qd-cards mt-4">
         {dataJSON.operations.map((op, index) => (
           <OperationCard
             key={index}

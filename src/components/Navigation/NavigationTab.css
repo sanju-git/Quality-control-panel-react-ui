@@ -29,3 +29,7 @@
     height: 6em;
     width: 20em;
 }
+
+.green-bg{
+    background: linear-gradient(135deg, #00bcd4, #8bc34a);
+}

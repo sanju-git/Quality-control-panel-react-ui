@@ -1,4 +1,3 @@
-// components/OperationCard.js
 import React from "react";
 import "./OperationCard.css";
 
@@ -8,41 +7,31 @@ const OperationCard = ({
   qcFailed,
   failureRate,
   statusColor,
-  openOPCardChart
+  openOPCardChart,
 }) => (
   <div
     className="op-card cursor-pointer"
-    style={{
-      //   border: `2px solid ${statusColor}`,
-      borderRadius: "10px",
-      padding: "1rem",
-      width: "180px",
-      backgroundColor: "#f9f9f9",
-      textAlign: "center",
-    }}
     onClick={() => openOPCardChart(opCode)}
   >
-    <h4>{opCode}</h4>
+    <h5>{opCode}</h5>
+
     <div
-      className="my-1"
-      style={{ height: 4, width: "relative", background: `${statusColor}` }}
+      className="status-bar my-2"
+      style={{ backgroundColor: statusColor }}
     ></div>
-    <div style={{ paddingTop: 10, paddingBottom: 10 }}>
-      {totalProduced}
-      <br />
-      <br />
+
+    <div className="op-metric">
+      <div>{totalProduced}</div>
       <strong>Total Produced</strong>
     </div>
-    <div style={{ paddingTop: 10, paddingBottom: 10 }}>
-      {qcFailed}
-      <br />
-      <br />
+
+    <div className="op-metric">
+      <div>{qcFailed}</div>
       <strong>QC Failed</strong>
     </div>
-    <div style={{ paddingTop: 10, paddingBottom: 10 }}>
-      {failureRate}
-      <br />
-      <br />
+
+    <div className="op-metric">
+      <div>{failureRate}</div>
       <strong>Failure Rate</strong>
     </div>
   </div>

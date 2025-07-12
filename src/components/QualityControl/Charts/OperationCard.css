@@ -1,3 +1,24 @@
-.op-card:hover{
-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+.op-card {
+  flex: 1 1 200px;
+  max-width: 250px;
+  min-width: 160px;
+  margin: 0.5rem;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  text-align: center;
+  transition: box-shadow 0.2s ease;
+}
+
+.op-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.status-bar {
+  height: 4px;
+  width: 100%;
+}
+
+.op-metric {
+  padding: 0.5rem 0;
 }

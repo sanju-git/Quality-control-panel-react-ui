@@ -1,21 +1,48 @@
-.title{
- background-color: #eaeaea;
- height: 3.3em;
- padding: 10px;
- box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+.title {
+  background-color: #eaeaea;
+  height: 3.3em;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-.qd-cards{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    gap: 1rem;
-    height: 28em;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top: 5em;
-    padding-bottom: 5em;
-    margin-top: 10px;
-    background-color: #eaeaea;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+/* Responsive operation cards container */
+.qd-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem 1em;
+  background-color: #eaeaea;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  max-height: 61vh;
+  overflow-y: auto;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #888 transparent; /* Firefox */
+}
+
+/* Chrome, Edge, Safari */
+.qd-cards::-webkit-scrollbar {
+  width: 6px;
+}
+
+.qd-cards::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.qd-cards::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 3px;
+}
+
+/* Remove up/down buttons (arrows) */
+.qd-cards::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+}
+
+.equal-height-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  align-items: stretch;
 }

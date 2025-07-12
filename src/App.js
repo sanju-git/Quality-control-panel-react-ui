@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import PartTraceabilityContainer from "./components/PartTraceability/PartTraceabilityContainer";
 import QualityControlDashboard from "./components/QualityControl/QualityControlDashboard";
 import OPLineChartConatiner from "./components/QualityControl/OPLineChartConatiner";
+import PartHistory from "./components/QualityControl/PartHistory/PartHistoryContainer";
+import NavigationTab from "./components/Navigation/NavigationTab";
 
 function App() {
   return (
@@ -16,7 +18,12 @@ function App() {
         <div className="content-container">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/block/:blockName" element={<NavigationTab />} />
             <Route path="/part/:id" element={<PartTraceabilityContainer />} />
+            <Route
+              path="/quality-dashboard/:id/part-history"
+              element={<PartHistory />}
+            />
             <Route
               path="/quality-dashboard/:id/:OPId"
               element={<OPLineChartConatiner />}
@@ -25,6 +32,7 @@ function App() {
               path="/quality-dashboard/:id"
               element={<QualityControlDashboard />}
             />
+            {/* <Route path="/part-history" element={<PartHistory />} /> */}
           </Routes>
         </div>
       </div>

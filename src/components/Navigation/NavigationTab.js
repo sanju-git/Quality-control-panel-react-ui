@@ -1,10 +1,11 @@
 import "./NavigationTab.css";
 import { ReactComponent as SearchIcon } from "./../../assets/icons/search-icon.svg";
 import { ReactComponent as VerifiedIcon } from "./../../assets/icons/verified-icon.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-const NavigationTab = ({ blockName }) => {
+const NavigationTab = () => {
   const navigate = useNavigate();
+  const { blockName } = useParams();
   const handleClick = (page) => {
     // setShowNavigationTabs(true);
     if (page === "pt") {
@@ -15,8 +16,8 @@ const NavigationTab = ({ blockName }) => {
   };
   return (
     <div
-      style={{ height: "90vh" }}
-      className="d-flex align-items-center justify-content-center"
+      style={{ height: "100%" }}
+      className="d-flex align-items-center justify-content-center green-bg"
     >
       <div className="brand-container mx-1">
         <div style={{ padding: 10 }}>

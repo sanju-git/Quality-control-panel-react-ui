@@ -1,14 +1,25 @@
-.summary-panel-card{
- background-color: #eaeaea;
- padding: 1em;
- height: 10em;
- width: 35%;
- box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+.summary-panel-card {
+  background-color: #eaeaea;
+  padding: 1em;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  margin: auto;
 }
-.summary-panel-container{
-    justify-content: space-evenly;
+
+.quality-bar {
+  height: 5px;
+  width: 100%;
 }
-.summary-panel-quality-card{
-    padding: 10px;
-    width: 33%;
+
+.summary-panel-quality-card {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Remove bottom border on md and up */
+@media (min-width: 768px) {
+  .summary-panel-quality-card {
+    border-bottom: none;
+  }
 }

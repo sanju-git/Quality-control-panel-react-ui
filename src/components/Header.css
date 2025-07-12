@@ -12,3 +12,8 @@
     right: 0px;
     padding-right: 20px;
 }
+
+.back-button {
+  position: absolute;
+  left: 10px;
+}

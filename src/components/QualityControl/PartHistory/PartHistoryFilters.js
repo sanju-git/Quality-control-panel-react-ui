@@ -1,8 +1,9 @@
-import "./QualityDashboardFilters.css";
+import React from "react";
+import "./PartHistoryFilters.css";
 
-const QualityDashboardFilters = () => {
+const PartHistoryFilters = () => {
   return (
-    <div className="filter-container">
+    <div className="part-history-filters">
       <h5 className="text-center">Slicers</h5>
       <div className="row mt-2 gx-2">
         <div className="col-12 col-sm-6 mb-2 mb-sm-0">
@@ -16,4 +17,4 @@ const QualityDashboardFilters = () => {
   );
 };
 
-export default QualityDashboardFilters;
+export default PartHistoryFilters;

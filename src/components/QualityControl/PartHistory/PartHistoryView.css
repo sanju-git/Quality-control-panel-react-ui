@@ -1,0 +1,31 @@
+.part-history-view {
+  background-color: #f8f8f8;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.part-history-view table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.part-history-view th,
+.part-history-view td {
+  border: 1px solid black;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.part-history-view th {
+  font-weight: bold;
+}
+
+.green {
+  background-color: #00c853;
+}
+
+.red {
+  background-color: #f44336;
+}

@@ -1,0 +1,28 @@
+/*
+ * The .part-data-container and .table-wrapper classes are no longer needed.
+ * You can remove them from this file.
+*/
+
+/* Make thead sticky relative to the scrolling .modalContent */
+.sticky-header-table thead th {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1; /* A z-index is good practice for sticky elements */
+}
+
+/* Make the footer sticky to the bottom */
+.part-data-footer {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 15px;
+  background-color: #fff; /* Background is crucial to hide content scrolling underneath */
+  border-top: 1px solid #ddd;
+  z-index: 1;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

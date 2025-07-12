@@ -27,6 +27,8 @@ const GaugeChart = ({ value, thresholds, colors }) => {
   };
 
   const gaugeOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
     rotation: -90,
     circumference: 180,
     plugins: {
@@ -36,12 +38,9 @@ const GaugeChart = ({ value, thresholds, colors }) => {
   };
 
   return (
-    <div className="guage-card">
-      <h3 className="text-center">Overall Quality</h3>
-      <div
-        style={{ height: "8em", width: "16em" }}
-        className="d-flex justify-content-center"
-      >
+    <div className="guage-card h-100 d-flex flex-column">
+      <h5 className="text-center mb-3">Overall Quality</h5>
+      <div className="chart-wrapper flex-grow-1">
         <Doughnut data={gaugeData} options={gaugeOptions} />
       </div>
     </div>

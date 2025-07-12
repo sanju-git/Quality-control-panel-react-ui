@@ -1,5 +1,5 @@
 import "./Input.css";
-const Input = () => {
+const Input = ({ setPartNumberFunc, placeholder }) => {
   return (
     <div className="group">
       <svg viewBox="0 0 24 24" aria-hidden="true" className="search-icon">
@@ -12,8 +12,9 @@ const Input = () => {
         id="query"
         className="input"
         type="text"
-        placeholder="Search..."
+        placeholder={placeholder}
         name="searchbar"
+        onChange={(e) => setPartNumberFunc(e)}
       />
     </div>
   );

@@ -1,69 +1,76 @@
 import React from "react";
 import { ReactComponent as DownloadIcon } from "./../../assets/icons/download-icon.svg";
+import "./IndividualPartData.css";
 
-const IndividualPartindividualPartData = ({ individualPartData }) => {
-  // Convert the table individualPartData to CSV format
+const IndividualPartData = ({
+  individualPartData = [],
+  header = "OPN",
+}) => {
   const downloadCSV = () => {
+    // ... (downloadCSV function remains the same)
     const rows = [
-      ["OP Name", individualPartData.header],
-      ...Object.entries(individualPartData.values).map(([label, value]) => [
-        label,
-        value,
+      ["Character Name", "Value", "Lower Limit", "Upper Limit", "Status"],
+      ...individualPartData.map((param) => [
+        param.characterName,
+        param.value,
+        param.lowerLimitValue,
+        param.upperLimitValue,
+        param.status,
       ]),
     ];
-
     const csvContent = rows.map((row) => row.join(",")).join("\n");
-
     const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
     const url = URL.createObjectURL(blob);
-
     const link = document.createElement("a");
     link.href = url;
     link.setAttribute(
       "download",
-      `${individualPartData.header.replace(" ", "_")}_individualPartData.csv`
+      `${header.replace(/\s+/g, "_")}_Parameters.csv`
     );
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    URL.revokeObjectURL(url); // Cleanup
+    URL.revokeObjectURL(url);
   };
 
   return (
-    <div>
-      <table className="table table-bordered text-center">
+    // No more wrappers needed, the parent modal will handle the layout
+    <>
+      <table className="table table-bordered text-center sticky-header-table">
         <thead>
           <tr>
-            <th>OP Name</th>
-            <th>{individualPartData.header}</th>
+            <th>Character Name</th>
+            <th>Value</th>
+            <th>Lower Limit</th>
+            <th>Upper Limit</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
-          {Object.entries(individualPartData.values).map(
-            ([label, value], index) => (
+          {individualPartData.length > 0 ? (
+            individualPartData.map((param, index) => (
               <tr key={index}>
-                <td>{label}</td>
-                <td>
-                  {label === "Time" ? (
-                    <input
-                      type="date"
-                      className="form-control"
-                      defaultValue={value}
-                    />
-                  ) : (
-                    value
-                  )}
-                </td>
+                <td>{param.characterName}</td>
+                <td>{param.value}</td>
+                <td>{param.lowerLimitValue}</td>
+                <td>{param.upperLimitValue}</td>
+                <td style={{background:param.status=="OK"?"#AFE1AF":"#EE4B2B"}}>{param.status}</td>
               </tr>
-            )
+            ))
+          ) : (
+            <tr>
+              <td colSpan="5">No data available</td>
+            </tr>
           )}
         </tbody>
       </table>
-      <i className="d-flex justify-content-end cursor-pointer mt-1" onClick={downloadCSV}>
+
+      {/* The footer is now styled to be sticky within the scrolling parent */}
+      <div className="part-data-footer cursor-pointer" onClick={downloadCSV}>
         <DownloadIcon width="32" height="32" />
-      </i>
-    </div>
+      </div>
+    </>
   );
 };
 
-export default IndividualPartindividualPartData;
+export default IndividualPartData;

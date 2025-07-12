@@ -39,6 +39,10 @@
   margin-top: 10px;
 }
 
+.ml-1{
+  margin-left: 10px;
+}
+
 .mt-2{
   margin-top: 20px;
 }
@@ -62,13 +66,13 @@ html, body, #root {
 }
 
 .header-container {
-  height: 10%;
+  height: 7%;
   flex-shrink: 0;
 }
 
 .content-container {
-  height: 90%;
-  overflow: auto; 
+  height: 93%;
+  /* overflow: auto;  */
   background-color: #f3f4f6;
 }
 

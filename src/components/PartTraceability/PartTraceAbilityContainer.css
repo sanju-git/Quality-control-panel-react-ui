@@ -6,6 +6,25 @@
     padding: 20px;
 }
 
+button {
+  width: 150px;
+  height: 45px;
+  border: 3px solid #0cbdc8;
+  border-radius: 45px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: white;
+  font-size: 1.2em;
+  font-weight: 550;
+  border-radius: 10px !important;
+}
+
+button:hover {
+  background: #0cbdc8;
+  color: white;
+  font-size: 1.1em;
+}
+
 /* From Uiverse.io by alexruix */ 
 /* .input-box {
   max-width: 190px;

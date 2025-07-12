@@ -26,18 +26,26 @@ const PartTraceabilityContainer = () => {
   };
 
   const searchPartNumber = async () => {
-    setLoading(true);
-    if (partNumber && partNumber != null) {
-      await getPartsData(partNumber).then((response) => {
-        if (response.success) {
-          console.log(response.data);
-          setPartsData(response.data);
-          setLoading(false);
-        } else {
-          setPartsData([]);
-          setLoading(false);
-        }
-      });
+    if (partNumber && partNumber.length >= 1) {
+      setLoading(true);
+      if (partNumber && partNumber != null) {
+        await getPartsData(partNumber).then((response) => {
+          if (response.success) {
+            console.log(response.data);
+            setPartsData(response.data);
+
+            setTimeout(
+              function () {
+                setLoading(false);
+              }.bind(this),
+              1000
+            );
+          } else {
+            setPartsData([]);
+            setLoading(false);
+          }
+        });
+      }
     }
   };
 

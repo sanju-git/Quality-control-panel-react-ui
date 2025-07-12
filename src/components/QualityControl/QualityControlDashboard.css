@@ -8,17 +8,18 @@
 /* Responsive operation cards container */
 .qd-cards {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;            /* Prevent wrapping to new line */
+  overflow-x: auto;             /* Enable horizontal scrolling */
+  overflow-y: hidden;           /* Prevent vertical overflow */
+  white-space: nowrap;          /* Prevent internal wrapping */
   gap: 1rem;
   padding: 2rem 1em;
   background-color: #eaeaea;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  max-height: 61vh;
-  overflow-y: auto;
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #888 transparent; /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
 }
+
 
 /* Chrome, Edge, Safari */
 .qd-cards::-webkit-scrollbar {

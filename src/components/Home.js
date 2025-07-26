@@ -1,10 +1,10 @@
 import BlocksContainer from "./Blocks/BlocksContainer";
-import "./Home.css"
+import "./Home.css";
 
-const Home = () => {
+const Home = (props) => {
   return (
     <div className="app-container">
-      <BlocksContainer />
+      <BlocksContainer onBlockSelect={props.setBlock} />
     </div>
   );
 };

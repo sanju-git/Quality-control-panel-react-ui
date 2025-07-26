@@ -1,11 +1,8 @@
-.welcome-text{
-    color: white !important;
-}
-
 .block-card{
     border-radius: 15px;
     padding: 15px;
-    background: #f3fff3;
+    background: #84dcc6;
+    color: white;
 }
 
 .block-card:hover{
@@ -18,7 +15,33 @@
 }
 
 .welcome-text{
-    font-size: 3.5em;
+    font-size: 3em;
     margin: 0px !important;
     font-weight: 700;
+    word-spacing: 3px;
+    letter-spacing: 2px;
+    background: linear-gradient(0deg, #099773 -6.85%, #22af8b 11.49%, #43b692 52.09%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* For Firefox */
+    color: transparent;    /* Fallback */
+}
+
+.block-select-text{
+    font-size: 3em;
+    margin: 0px !important;
+    font-weight: 700;
+    word-spacing: 3px;
+    letter-spacing: 2px;
+    color: black;
+}
+
+.blocks-container{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    padding: 50px 0px;
+}
+
+.active-block{
+    border: 3px solid #43b692;
+    padding: 30px;
 }

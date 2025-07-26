@@ -3,8 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(7deg, #00bcd4, #8bc34a);
-  color: white;
+  color: black;
 }
 
 .user-name{

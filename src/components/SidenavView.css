@@ -1,0 +1,175 @@
+.sidenav-container {
+    width: 210px;
+    background: linear-gradient(0deg, #099773 -6.85%, #22af8b 11.49%, #43b692 52.09%);
+    height: 100vh;
+    transition: width 0.4s ease-in-out;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.sidenav-container.collapsed {
+    width: 60px;
+    align-items: center;
+}
+
+
+.sidenav-bot-logo {
+    height: 32px;
+    width: 38px;
+    object-fit: contain;
+    /* padding-right: 4px; */
+    padding-left: 4px;
+    padding-bottom: 16px;
+    /* padding-top: 6px */
+}
+
+.sidebar-toggle-icon {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    stroke: #5d5d5d;
+}
+
+/* Default: Horizontal layout in expanded mode */
+.sidenav-top-icons {
+    width: 92%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    /* padding-top: 10px; */
+}
+
+/* Vertical layout in collapsed mode */
+.sidenav-top-icons.vertical {
+    flex-direction: column;
+    align-items: center;
+    /* gap: 10px; */
+    padding: 10px;
+    padding-left: 10px;
+}
+
+.new-chat-button {
+    background-color: #277dc9;
+    color: white;
+    border: none;
+    /* padding: 4px; */
+    padding: 4px;
+    border-radius: 5px;
+    /* margin-left: 3px; */
+}
+
+.toggle-button {
+    background-color: rgb(230, 240, 255);
+    text-align: center;
+    padding: 4px;
+    border-radius: 5px;
+    margin-left: 4%;
+    margin-right: 5px;
+}
+
+/* .log-out-button {
+    padding: 5px 10px 8px 10px;
+    box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.1);
+    bottom: 0px;
+    position: absolute;
+    width: 12%;
+    text-align: center;
+} */
+
+.sidebar-content {
+    height: calc(100% - 60px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #D9D9D9 transparent; /* Firefox */
+}
+
+/* Chrome, Edge, Safari */
+.sidebar-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar-content::-webkit-scrollbar-track {
+    background: transparent; /* prevents white track */
+}
+
+.sidebar-content::-webkit-scrollbar-thumb {
+    background-color: #888;  /* color of the thumb */
+    border-radius: 4px;
+    border: 1px solid transparent; /* optional for spacing */
+}
+
+.sidebar-content::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+
+.inner-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.log-out-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    z-index: 999;  
+    padding-bottom: 15px;
+    padding-left: 20px;
+}
+
+.logout-title {
+    color: #425562;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 0.85em;
+    padding-top: 2px;
+}
+
+.logout-icon {
+    color: #425562;
+    height: 13px;
+    width: 13px;
+    padding-right: 5px
+}
+
+.logout-content {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* spacing between icon and text */
+}
+
+.top-icons-container{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+.main-icons-container{
+    padding: 20px 10px 20px 10px;
+}
+
+.icon-container{
+    margin: 10px 5px 10px 5px;
+    padding: 10px;
+    color: white;
+    font-weight: 600;
+}
+
+.icon-container:hover{
+    box-shadow: 0px 10px 15px -3px rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.active-menu{
+    border-bottom: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px -3px rgba(255, 255, 255, 0.1);
+}

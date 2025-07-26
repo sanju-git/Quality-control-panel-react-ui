@@ -1,5 +1,6 @@
 .title {
-  background-color: #eaeaea;
+  background-color: #f9f9f9
+;
   height: 3.3em;
   padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -14,7 +15,8 @@
   white-space: nowrap;          /* Prevent internal wrapping */
   gap: 1rem;
   padding: 2rem 1em;
-  background-color: #eaeaea;
+  background-color: #f9f9f9
+;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   scrollbar-width: thin;
   scrollbar-color: #888 transparent;

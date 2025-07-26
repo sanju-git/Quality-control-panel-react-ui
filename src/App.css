@@ -60,20 +60,27 @@ html, body, #root {
 
 .app-wrapper {
   display: flex;
-  flex-direction: column;
   height: 100vh;
-  overflow: hidden; /* Ensure no scroll */
+  width: 100%;
+  overflow: hidden;
 }
+
+.content-container {
+  flex-grow: 1;
+  transition: margin 0.3s ease;
+  overflow: auto;
+  padding: 1rem;
+  min-width: 0;
+  background-image: 
+    linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 6px 6px; /* smaller grid squares */
+}
+
 
 .header-container {
   height: 7%;
   flex-shrink: 0;
-}
-
-.content-container {
-  height: 93%;
-  /* overflow: auto;  */
-  background-color: #f3f4f6;
 }
 
 .justify-content-end{

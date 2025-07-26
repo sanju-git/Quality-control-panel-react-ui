@@ -1,19 +1,14 @@
 import "./BlocksContainer.css";
 import blocksData from "./../../Data/blocks.json";
-import { useState } from "react";
-import NavigationTab from "../Navigation/NavigationTab";
 import { getBlocksData } from "../../services/DataService";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-const BlocksContainer = () => {
-  const [showNavigationTabs, setShowNavigationTabs] = useState(false);
-  const [blockName, setBlockName] = useState(null);
-  const navigate = useNavigate();
-  // const navigate = useNavigate();
-  const handleClick = (blockName) => {
-    // setShowNavigationTabs(true);
-    // setBlockName(blockName);
-    navigate("/block/" + blockName);
+const BlocksContainer = (props) => {
+  const colors = ["#9ECAD6", "#748DAE", "#F5CBCB"];
+  const [currentBlock, setCurrentBlock] = useState(null);
+  const handleClick = (blockName, index) => {
+    props.onBlockSelect(blockName);
+    setCurrentBlock(index);
   };
 
   const getBlocks = async () => {
@@ -24,43 +19,33 @@ const BlocksContainer = () => {
 
   return (
     <>
-      <div className="d-flex">
-        <div
-          style={{ height: "90vh", width: "60%" }}
-          className="d-flex align-items-center justify-content-center"
-        >
-          <div>
-            <p
-              style={{ margin: "0px !important" }}
-              className="text-center welcome-text"
-            >
-              Welcome to
-            </p>
-            <p className="welcome-text" style={{ margin: "0px !important" }}>
-              Quality Control Panel
-            </p>
-          </div>
+      <div className="text-center mt-5 pt-5">
+        <h1 className="welcome-text">
+          Welcome to <br /> Quality Control Panel
+        </h1>
+      </div>
+      <div className="mt-5 blocks-container">
+        <div className="text-center block-select-text mb-3">
+          <h5>Please select a block</h5>
         </div>
-        <div
-          style={{ width: "40%" }}
-          className="d-flex align-items-center justify-content-center"
-        >
-          <div>
-            {blocksData.map((b) => (
-              <div
-                key={b.name} // Always add a key
-                onClick={() => handleClick(b.name)}
-                className="block-card cursor-pointer my-2 d-flex align-items-center"
-              >
-                <img
-                  className="block-image"
-                  src={require(`../../assets/images/${b.imageSrc}`)}
-                  alt={b.name}
-                />
-                <h3 style={{ padding: 20 }}>{b.name}</h3>
-              </div>
-            ))}
-          </div>
+        <div className="d-flex align-items-center justify-content-center">
+          {blocksData.map((b, index) => (
+            <div
+              key={b.name}
+              onClick={() => handleClick(b.name, index)}
+              className={"block-card cursor-pointer d-flex align-items-center mx-3 mt-3"}
+              style={{
+                backgroundColor: colors[index % colors.length],
+              }}
+            >
+              <img
+                className="block-image"
+                src={require(`../../assets/images/${b.imageSrc}`)}
+                alt={b.name}
+              />
+              <h3 style={{ padding: 20 }}>{b.name}</h3>
+            </div>
+          ))}
         </div>
       </div>
     </>

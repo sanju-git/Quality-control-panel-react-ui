@@ -1,0 +1,55 @@
+.new-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.new-modal-content {
+  position: relative;
+  width: 95vw;
+  height: 95vh;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+}
+
+/* Scrollbar styles (optional) */
+.new-modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.new-modal-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+
+.new-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  z-index: 10;
+}
+
+.new-modal-close:hover {
+  color: #000;
+}
+
+.new-modal-body {
+  padding-top: 2.5rem; /* Space for close button */
+}

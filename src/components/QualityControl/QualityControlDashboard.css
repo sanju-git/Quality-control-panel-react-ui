@@ -14,10 +14,9 @@
   overflow-y: hidden;           /* Prevent vertical overflow */
   white-space: nowrap;          /* Prevent internal wrapping */
   gap: 1rem;
-  padding: 2rem 1em;
-  background-color: #f9f9f9
-;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  /* padding: 2rem 1em; */
+  /* background-color: #f9f9f9; */
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
   scrollbar-width: thin;
   scrollbar-color: #888 transparent;
 }

@@ -1,40 +1,49 @@
 import React from "react";
 import "./OperationCard.css";
 
-const OperationCard = ({
-  opCode,
-  totalProduced,
-  qcFailed,
-  failureRate,
-  statusColor,
-  openOPCardChart,
-}) => (
-  <div
-    className="op-card cursor-pointer"
-    onClick={() => openOPCardChart(opCode)}
-  >
-    <h5>{opCode}</h5>
-
+const OperationCard = (props) => {
+  let { op, openOPCardChart } = props;
+  let { operationName, total, nokCount, okPercentage, okCount } = op;
+  return (
     <div
-      className="status-bar my-2"
-      style={{ backgroundColor: statusColor }}
-    ></div>
+      className="op-card cursor-pointer"
+      onClick={() => openOPCardChart(operationName)}
+    >
+      <strong>
+        <pre>{operationName}</pre>
+      </strong>
+      <div className="op-metric">
+        <strong style={{ fontSize: 30 }}>{total}</strong>
+        <br />
+        <pre>Total Parts</pre>
+      </div>
+      <div className="d-flex justify-content-between op-metric green-card my-2">
+        <div>
+          <pre>OK parts</pre>
+        </div>
+        <div>{okCount}</div>
+      </div>
+      <div className="d-flex justify-content-between op-metric red-card my-2">
+        <div>
+          <pre>NOK parts</pre>
+        </div>
+        <div>{nokCount}</div>
+      </div>
+      <div className="d-flex justify-content-between op-metric green-card my-2">
+        <div>
+          <pre>Success Rate</pre>
+        </div>
+        <div>{okPercentage + "%"}</div>
+      </div>
 
-    <div className="op-metric">
-      <div>{totalProduced}</div>
-      <strong>Total Produced</strong>
+      <div className="d-flex justify-content-between op-metric red-card my-2">
+        <div>
+          <pre>Failure Rate</pre>
+        </div>
+        <div>{(nokCount / total) * 100 + "%"}</div>
+      </div>
     </div>
-
-    <div className="op-metric">
-      <div>{qcFailed}</div>
-      <strong>QC Failed</strong>
-    </div>
-
-    <div className="op-metric">
-      <div>{failureRate}</div>
-      <strong>Failure Rate</strong>
-    </div>
-  </div>
-);
+  );
+};
 
 export default OperationCard;

@@ -19,14 +19,14 @@ const BlocksContainer = (props) => {
 
   return (
     <>
-      <div className="text-center mt-5 pt-5">
+      <div className="text-center pt-5">
         <h1 className="welcome-text">
-          Welcome to <br /> Quality Control Panel
+          Welcome to <br /> Quality Control Cockpit!
         </h1>
       </div>
       <div className="mt-5 blocks-container">
         <div className="text-center block-select-text mb-3">
-          <h5>Please select a block</h5>
+          <h5>Please select a block to continue..</h5>
         </div>
         <div className="d-flex align-items-center justify-content-center">
           {blocksData.map((b, index) => (

@@ -1,10 +1,9 @@
 .filter-container {
   text-align: center;
-  background-color: #f9f9f9
-;
-  padding: 0.8em;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: #f9f9f9;
+  border: 1px solid #bbbbbb;
+  padding: 0.5em;
   width: 100%;
-  max-width: 500px;
   margin: auto;
+  border-radius: 10px;
 }

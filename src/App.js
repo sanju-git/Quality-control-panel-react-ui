@@ -46,7 +46,7 @@ function App() {
           <div className="header-container">
             <Header />
           </div>
-          <div style={{ height: "93%" }}>
+          <div className="pt-3" style={{ height: "93%" }}>
             <Routes>
               <Route
                 path="/"

@@ -1,5 +1,13 @@
 import React from "react";
 import "./PartTable.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCalendarDays,
+  faCheckDouble,
+  faClock,
+  faHardDrive,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 
 const REQUIRED_OPNS = [
   "OPN_40",
@@ -29,12 +37,26 @@ const PartTable = ({ data, showParameters }) => {
     return entry ? entry[key] || "NULL" : "NULL";
   };
 
+  const getIconName = (field) => {
+    if (field === "Operator Name") {
+      return faUser;
+    } else if (field === "Date") {
+      return faCalendarDays;
+    } else if (field === "Time") {
+      return faClock;
+    } else if (field === "Machine Name") {
+      return faHardDrive;
+    } else if (field === "Overall Status") {
+      return faCheckDouble;
+    }
+  };
+
   return (
     <div className="table-responsive">
       <table className="table table-bordered text-center">
         <thead>
           <tr>
-            <th>Operator Name</th>
+            <th>Operation</th>
             {REQUIRED_OPNS.map((opn) => (
               <th key={opn}>{opn}</th>
             ))}
@@ -43,7 +65,11 @@ const PartTable = ({ data, showParameters }) => {
         <tbody>
           {HEADERS.map((field, rowIndex) => (
             <tr key={rowIndex}>
-              <td>{field}</td>
+              <td>
+                <FontAwesomeIcon icon={getIconName(field)} />
+                &nbsp;&nbsp;
+                {field}
+              </td>
               {REQUIRED_OPNS.map((opn, colIndex) => {
                 let displayKey = "";
                 switch (field) {
@@ -82,7 +108,11 @@ const PartTable = ({ data, showParameters }) => {
                   <td
                     key={`${rowIndex}-${colIndex}`}
                     className={cellValue !== "NULL" ? "cursor-pointer" : ""}
-                    onClick={cellValue !== "NULL" ? () => showParameters(opn) : undefined}
+                    onClick={
+                      cellValue !== "NULL"
+                        ? () => showParameters(opn)
+                        : undefined
+                    }
                     style={style}
                   >
                     {cellValue}

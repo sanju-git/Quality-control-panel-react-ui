@@ -1,14 +1,16 @@
 .op-card {
   flex: 1 1 200px;
-  max-width: 250px;
-  min-width: 160px;
+  max-width: 15em;
+  min-width: 13em;
   margin: 0.5rem;
   border-radius: 10px;
   padding: 1rem;
   background-color: #f9f9f9;
   text-align: center;
   transition: box-shadow 0.2s ease;
+  border: 1px solid #bbbbbb;
 }
+
 
 .op-card:hover {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -20,5 +22,26 @@
 }
 
 .op-metric {
-  padding: 0.5rem 0;
+  padding: 0.5em;
+  width: 100%;
+  margin: auto;
+  border-radius: 5px;
+  color: #063b81;
+  font-size: 15px;
+}
+
+.green-card{
+  border: 1px solid #1c9e47;
+  color: #1c9e47;
+  background-color: #f5faf6;
+}
+
+.red-card{
+  border: 1px solid #e84447;
+  color: #e84447;
+  background-color: #fff7f5;
+}
+
+pre{
+  margin-bottom: 0px !important;
 }

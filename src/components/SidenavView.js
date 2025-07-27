@@ -9,12 +9,13 @@ import {
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SidenavView = (props) => {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const [activeMenu, setActiveMenu] = useState(null);
   let { block, blockTrigger } = props;
+  const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,6 +23,19 @@ const SidenavView = (props) => {
       setIsCollapsed(false);
     }
   }, [block, blockTrigger]);
+
+  useEffect(() => {
+    // console.log("Current path:", location.pathname);
+    if (location.pathname.split("/").length > 1) {
+      if (location.pathname.split("/")[1] === "part") {
+        setActiveMenu("pt");
+      } else if (location.pathname.split("/")[1] === "quality-dashboard") {
+        setActiveMenu("qc");
+      } else if (location.pathname.split("/")[1] === "") {
+        setActiveMenu("home");
+      }
+    }
+  }, [location]);
 
   const toggleSidebar = () => {
     if (block && block.length >= 1) {
@@ -35,7 +49,6 @@ const SidenavView = (props) => {
 
   const navigateAndSetActive = (path, active) => {
     navigate(path);
-    setActiveMenu(active);
   };
 
   return (
@@ -130,7 +143,7 @@ const SidenavView = (props) => {
               style={{ color: "#fff", height: 18, width: 18 }}
               icon={faChartSimple}
             />
-            &nbsp;&nbsp; Dashboard
+            &nbsp;&nbsp; Reports
           </div>
         </div>
       )}

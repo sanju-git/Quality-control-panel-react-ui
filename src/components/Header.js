@@ -11,10 +11,14 @@ const Header = () => {
 
   useEffect(() => {
     if (location.pathname.split("/").length > 1) {
-      if (location.pathname.split("/")[1] === "part") {
+      if (location.pathname.split("/")[3] === "part-history") {
+        setPageName("Part History");
+      } else if (location.pathname.split("/")[1] === "part") {
         setPageName("Part Traceability");
       } else if (location.pathname.split("/")[1] === "quality-dashboard") {
         setPageName("Quality Control");
+      } else if (location.pathname.split("/")[1] === "lab-results") {
+        setPageName("Lab Results");
       } else if (location.pathname.split("/")[1] === "") {
         setPageName("");
       }

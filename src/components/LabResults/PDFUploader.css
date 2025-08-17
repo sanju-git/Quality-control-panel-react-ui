@@ -1,0 +1,11 @@
+.upload-area {
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upload-area.drag-active {
+  background-color: #e3f2fd;
+  border-color: #0d6efd;
+  transform: scale(1.02);
+}

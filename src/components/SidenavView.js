@@ -5,6 +5,7 @@ import { ReactComponent as MenuOpen } from "../../src/assets/icons/expand.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChartSimple,
+  faFlask,
   faHouse,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
@@ -31,6 +32,8 @@ const SidenavView = (props) => {
         setActiveMenu("pt");
       } else if (location.pathname.split("/")[1] === "quality-dashboard") {
         setActiveMenu("qc");
+      } else if (location.pathname.split("/")[1] === "lab-results") {
+        setActiveMenu("lr");
       } else if (location.pathname.split("/")[1] === "") {
         setActiveMenu("home");
       }
@@ -47,7 +50,7 @@ const SidenavView = (props) => {
     }
   };
 
-  const navigateAndSetActive = (path, active) => {
+  const navigatePath = (path) => {
     navigate(path);
   };
 
@@ -88,7 +91,7 @@ const SidenavView = (props) => {
       {!isCollapsed && (
         <div className="main-icons-container">
           <div
-            onClick={() => navigateAndSetActive("/", "home")}
+            onClick={() => navigatePath("/", "home")}
             className={
               activeMenu === "home"
                 ? "icon-container cursor-pointer active-menu"
@@ -102,7 +105,7 @@ const SidenavView = (props) => {
             &nbsp;&nbsp; Home
           </div>
           <div
-            onClick={() => navigateAndSetActive("/part/" + block, "pt")}
+            onClick={() => navigatePath("/part/" + block, "pt")}
             className={
               activeMenu === "pt"
                 ? "icon-container cursor-pointer active-menu"
@@ -116,9 +119,7 @@ const SidenavView = (props) => {
             &nbsp;&nbsp; Part Traceability
           </div>
           <div
-            onClick={() =>
-              navigateAndSetActive("/quality-dashboard/" + block, "qc")
-            }
+            onClick={() => navigatePath("/quality-dashboard/" + block, "qc")}
             className={
               activeMenu === "qc"
                 ? "icon-container cursor-pointer active-menu"
@@ -144,6 +145,21 @@ const SidenavView = (props) => {
               icon={faChartSimple}
             />
             &nbsp;&nbsp; Reports
+          </div>
+          <div
+            // onClick={() => setActiveMenu("lr")}
+            onClick={() => navigatePath("/lab-results", "lr")}
+            className={
+              activeMenu === "lr"
+                ? "icon-container cursor-pointer active-menu"
+                : "icon-container cursor-pointer"
+            }
+          >
+            <FontAwesomeIcon
+              style={{ color: "#fff", height: 18, width: 18 }}
+              icon={faFlask}
+            />
+            &nbsp;&nbsp; Lab Results
           </div>
         </div>
       )}

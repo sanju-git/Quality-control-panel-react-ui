@@ -1,0 +1,39 @@
+[
+  {
+    "partName": "CH56741",
+    "operations": [
+      { "operation": "OP 40", "status": "pass" },
+      { "operation": "OP 50", "status": "pass" },
+      { "operation": "OP 60", "status": "fail" },
+      { "operation": "OP 70", "status": "pass" }
+    ]
+  },
+  {
+    "partName": "CH98231",
+    "operations": [
+      { "operation": "OP 40", "status": "pass" },
+      { "operation": "OP 50", "status": "fail" },
+      { "operation": "OP 60", "status": "fail" },
+      { "operation": "OP 70", "status": "pass" }
+    ]
+  },
+  {
+    "partName": "CH14562",
+    "operations": [
+      { "operation": "OP 40", "status": "pass" },
+      { "operation": "OP 50", "status": "pass" },
+      { "operation": "OP 60", "status": "pass" },
+      { "operation": "OP 70", "status": "pass" }
+    ]
+  },
+    {
+    "partName": "CH14562",
+    "operations": [
+      { "operation": "OP 40", "status": "pass" },
+      { "operation": "OP 50", "status": "pass" },
+      { "operation": "OP 60", "status": "pass" },
+      { "operation": "OP 70", "status": "pass" },
+      { "operation": "OP 80", "status": "pass" }
+    ]
+  }
+]

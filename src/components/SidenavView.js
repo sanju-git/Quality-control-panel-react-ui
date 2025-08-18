@@ -34,6 +34,8 @@ const SidenavView = (props) => {
         setActiveMenu("qc");
       } else if (location.pathname.split("/")[1] === "lab-results") {
         setActiveMenu("lr");
+      } else if (location.pathname.split("/")[1] === "reports") {
+        setActiveMenu("r");
       } else if (location.pathname.split("/")[1] === "") {
         setActiveMenu("home");
       }
@@ -149,9 +151,9 @@ const SidenavView = (props) => {
           </div>
           <div
             // onClick={() => setActiveMenu("d")}
-            onClick={() => navigatePath("/reports", "lr")}
+            onClick={() => navigatePath("/reports")}
             className={
-              activeMenu === "d"
+              activeMenu === "r"
                 ? "icon-container cursor-pointer active-menu"
                 : "icon-container cursor-pointer"
             }

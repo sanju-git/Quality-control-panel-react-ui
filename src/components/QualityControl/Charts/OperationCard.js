@@ -40,7 +40,7 @@ const OperationCard = (props) => {
         <div>
           <pre>Failure Rate</pre>
         </div>
-        <div>{(nokCount / total) * 100 + "%"}</div>
+        <div>{((nokCount / total) * 100).toFixed(2) + "%"}</div>
       </div>
     </div>
   );

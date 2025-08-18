@@ -34,7 +34,10 @@ export default function ReportsFilter({ filters, setFilters }) {
         &nbsp;
         <strong>Filters</strong>
       </div>
-      <div className="mt-1 p-3 border rounded">
+      <div
+        style={{ backgroundColor: "#fff" }}
+        className="mt-1 p-3 border rounded"
+      >
         {/* Operation Name - Multi Select */}
         <div className="mb-3">
           <label className="form-label fw-bold">Operation Name</label>

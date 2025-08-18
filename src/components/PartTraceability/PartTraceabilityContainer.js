@@ -63,10 +63,18 @@ const PartTraceabilityContainer = () => {
             placeholder={"Enter part number"}
             setPartNumberFunc={setPartNumberFunc}
           />
-          <button onClick={() => searchPartNumber()} className="ml-1 search-button">
+          <button
+            onClick={() => searchPartNumber()}
+            className="ml-1 search-button"
+          >
             Search
           </button>
         </div>
+        {partNumber && (
+          <span className="ml-2">
+            <strong>{"Part Number : " + partNumber}</strong>
+          </span>
+        )}
         {partsData && Object.entries(partsData).length >= 1 ? (
           <div className="part-table">
             <PartTable data={partsData} showParameters={showParameters} />

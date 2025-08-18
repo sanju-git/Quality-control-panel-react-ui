@@ -10,13 +10,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const REQUIRED_OPNS = [
-  "OPN_40",
-  "OPN_50",
-  "OPN_60",
-  "OPN_80",
-  "OP-120",
-  "OPN_130",
-  "OPN_170",
+  "OPN-40",
+  "OPN-50",
+  "OPN-60",
+  "OPN-80",
+  "OPN-120",
+  "OPN-130",
+  "OPN-170",
   "OPN-190",
   "OPN-200",
   "OPN-205",

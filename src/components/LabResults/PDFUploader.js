@@ -76,6 +76,10 @@ const PDFUploader = () => {
           </div>
         </div>
       )}
+
+      <div className="d-flex justify-content-end mt-2">
+        <button className="btn btn-dark btn-outlined">Upload</button>
+      </div>
     </div>
   );
 };

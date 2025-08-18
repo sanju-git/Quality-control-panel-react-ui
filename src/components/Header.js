@@ -19,6 +19,8 @@ const Header = () => {
         setPageName("Quality Control");
       } else if (location.pathname.split("/")[1] === "lab-results") {
         setPageName("Lab Results");
+      } else if (location.pathname.split("/")[1] === "reports") {
+        setPageName("Reports");
       } else if (location.pathname.split("/")[1] === "") {
         setPageName("");
       }

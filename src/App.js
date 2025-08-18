@@ -10,6 +10,7 @@ import NavigationTab from "./components/Navigation/NavigationTab";
 import SidenavContainer from "./components/SidenavContainer";
 import { useEffect, useState } from "react";
 import LabResultsContainer from "./components/LabResults/LabResultsContainer";
+import ReportContainer from "./components/Reports/ReportContainer";
 
 function App() {
   // const [block, setBlock] = useState(null);
@@ -53,12 +54,10 @@ function App() {
                 path="/"
                 element={<Home setBlock={handleBlockSelection} />}
               />
+              <Route path="/reports" element={<ReportContainer />} />
               <Route path="/block/:blockName" element={<NavigationTab />} />
               <Route path="/part/:id" element={<PartTraceabilityContainer />} />
-              <Route
-                path="/lab-results"
-                element={<LabResultsContainer />}
-              />
+              <Route path="/lab-results" element={<LabResultsContainer />} />
               <Route
                 path="/quality-dashboard/:id/part-history"
                 element={<PartHistory />}

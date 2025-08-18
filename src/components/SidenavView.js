@@ -119,6 +119,21 @@ const SidenavView = (props) => {
             &nbsp;&nbsp; Part Traceability
           </div>
           <div
+            // onClick={() => setActiveMenu("lr")}
+            onClick={() => navigatePath("/lab-results", "lr")}
+            className={
+              activeMenu === "lr"
+                ? "icon-container cursor-pointer active-menu"
+                : "icon-container cursor-pointer"
+            }
+          >
+            <FontAwesomeIcon
+              style={{ color: "#fff", height: 18, width: 18 }}
+              icon={faFlask}
+            />
+            &nbsp;&nbsp; Lab Results
+          </div>
+          <div
             onClick={() => navigatePath("/quality-dashboard/" + block, "qc")}
             className={
               activeMenu === "qc"
@@ -133,7 +148,8 @@ const SidenavView = (props) => {
             &nbsp;&nbsp; Quality Control
           </div>
           <div
-            onClick={() => setActiveMenu("d")}
+            // onClick={() => setActiveMenu("d")}
+            onClick={() => navigatePath("/reports", "lr")}
             className={
               activeMenu === "d"
                 ? "icon-container cursor-pointer active-menu"
@@ -145,21 +161,6 @@ const SidenavView = (props) => {
               icon={faChartSimple}
             />
             &nbsp;&nbsp; Reports
-          </div>
-          <div
-            // onClick={() => setActiveMenu("lr")}
-            onClick={() => navigatePath("/lab-results", "lr")}
-            className={
-              activeMenu === "lr"
-                ? "icon-container cursor-pointer active-menu"
-                : "icon-container cursor-pointer"
-            }
-          >
-            <FontAwesomeIcon
-              style={{ color: "#fff", height: 18, width: 18 }}
-              icon={faFlask}
-            />
-            &nbsp;&nbsp; Lab Results
           </div>
         </div>
       )}

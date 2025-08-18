@@ -42,6 +42,7 @@ const Dashboard = () => {
   };
 
   const applyFilters = async (fromDate, toDate) => {
+    console.log(location.pathname.split("/"));
     await getQCData(fromDate, toDate).then((response) => {
       if (response.success) {
         console.log(response);

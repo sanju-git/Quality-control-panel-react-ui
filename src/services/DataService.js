@@ -18,8 +18,10 @@ export const getQCData = async (fromDate, toDate) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      fromDate: "2025-01-01",
-      toDate: "2025-07-01",
+      // fromDate: "2025-01-01",
+      // toDate: "2025-07-01",
+      fromDate,
+      toDate,
       partNumber: "46354712",
     }),
   });

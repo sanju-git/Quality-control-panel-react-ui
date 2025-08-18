@@ -49,7 +49,8 @@ const Dashboard = () => {
         setMetaData(response.metadata);
         setOPData(response.data);
       } else {
-        console.log("blah");
+        setMetaData([]);
+        setOPData([]);
       }
     });
   };
@@ -64,27 +65,38 @@ const Dashboard = () => {
           />
         </div>
       </div>
-      <div className="row g-4 d-flex align-items-stretch">
-        <div className="col-12 col-md-3 h-100">
-          <GaugeChart
-            value={metaData.overallQuality}
-            thresholds={gauge.thresholds}
-            colors={gauge.colors}
-          />
-        </div>
-        <div className="col-12 col-md-8 h-100 mt-5">
-          <SummaryPanel metaData={metaData} />
-        </div>
-      </div>
+      {metaData &&
+      Object.entries(metaData).length >= 1 &&
+      opData &&
+      opData.length >= 1 ? (
+        <>
+          <div className="row g-4 d-flex align-items-stretch">
+            <div className="col-12 col-md-3 h-100">
+              <GaugeChart
+                value={metaData.overallQuality}
+                thresholds={gauge.thresholds}
+                colors={gauge.colors}
+              />
+            </div>
+            <div className="col-12 col-md-8 h-100 mt-5">
+              <SummaryPanel metaData={metaData} />
+            </div>
+          </div>
 
-      <div className="mt-4">
-        <strong>Quality by Operation</strong>
-        <div className="qd-cards mt-1">
-          {opData.map((op, index) => (
-            <OperationCard op={op} openOPCardChart={openOPCardChart} />
-          ))}
+          <div className="mt-4">
+            <strong>Quality by Operation</strong>
+            <div className="qd-cards mt-1">
+              {opData.map((op, index) => (
+                <OperationCard op={op} openOPCardChart={openOPCardChart} />
+              ))}
+            </div>
+          </div>
+        </>
+      ) : (
+        <div className="text-center">
+          No data available for the given selection.
         </div>
-      </div>
+      )}
       {showChartPopup && (
         <NewModal
           closePopup={closeModal}

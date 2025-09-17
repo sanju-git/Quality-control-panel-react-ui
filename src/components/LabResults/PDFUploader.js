@@ -2,10 +2,11 @@ import React, { useState, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./PDFUploader.css";
 
-const PDFUploader = () => {
+const PDFUploader = (props) => {
   const [file, setFile] = useState(null);
   const [dragActive, setDragActive] = useState(false);
   const fileInputRef = useRef(null);
+  let { uploadFile } = props;
 
   const handleFileChange = (e) => {
     const uploadedFile = e.target.files[0];
@@ -78,7 +79,12 @@ const PDFUploader = () => {
       )}
 
       <div className="d-flex justify-content-end mt-2">
-        <button className="btn btn-dark btn-outlined">Upload</button>
+        <button
+          onClick={() => uploadFile(file)}
+          className="btn btn-dark btn-outlined"
+        >
+          Upload
+        </button>
       </div>
     </div>
   );

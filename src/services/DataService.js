@@ -39,3 +39,18 @@ export const getPartsData = async (partNumber) => {
   res = await res.json();
   return res;
 };
+
+export const uploadLabResults = async (formData) => {
+  let res = await fetch(NODE_URL + "upload-lab-results", {
+    method: "POST",
+    // Do NOT set 'Content-Type' here when sending FormData
+    body: formData,
+  });
+
+  if (!res.ok) {
+    throw new Error("Upload failed: " + res.status);
+  }
+
+  res = await res.json();
+  return res;
+};

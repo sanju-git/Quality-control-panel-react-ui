@@ -20,7 +20,7 @@
     font-weight: 700;
     word-spacing: 3px;
     letter-spacing: 2px;
-    background: linear-gradient(0deg, #099773 -6.85%, #22af8b 11.49%, #43b692 52.09%);
+    background: #116736;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text; /* For Firefox */

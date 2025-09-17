@@ -1,6 +1,6 @@
 .sidenav-container {
     width: 210px;
-    background: linear-gradient(0deg, #099773 -6.85%, #22af8b 11.49%, #43b692 52.09%);
+    background: #116736;
     height: 100vh;
     transition: width 0.4s ease-in-out;
     overflow: hidden;
@@ -164,7 +164,7 @@
 }
 
 .icon-container:hover{
-    background-color: #3fbf99;
+    background-color: #66a940;
     border-radius: 5px;
 }
 
@@ -172,5 +172,5 @@
     border-left: 5px solid white;
     border-radius: 5px;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    background-color: #4cc5a1;
+    background-color: #66a940;
 }

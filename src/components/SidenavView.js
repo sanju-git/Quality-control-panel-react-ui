@@ -58,7 +58,7 @@ const SidenavView = (props) => {
 
   return (
     <div className={`sidenav-container ${isCollapsed ? "collapsed" : ""}`}>
-      <div className="top-icons-container">
+      <div className="top-icons-container d-flex">
         <div onClick={toggleSidebar}>
           {isCollapsed ? (
             <MenuClose
@@ -88,6 +88,13 @@ const SidenavView = (props) => {
             />
           )}
         </div>
+        {/* {!isCollapsed && <div>
+          <img
+            style={{ height: 50, width: 150 }}
+            className="craftsman-logo-image ml-1"
+            src={require(`./../assets/images/craftsman-logo.png`)}
+          />
+        </div>} */}
       </div>
 
       {!isCollapsed && (

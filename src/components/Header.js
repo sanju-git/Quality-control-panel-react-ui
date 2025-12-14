@@ -34,11 +34,20 @@ const Header = () => {
             <div className="cursor-pointer" onClick={() => navigate(-1)}>
               <FontAwesomeIcon icon={faArrowLeft} />
             </div>
-            <div className="mx-3">
+            <div className="mx-3 my-3">
               <h5>{pageName}</h5>
             </div>
           </>
         )}
+      </div>
+
+      <div className="header-logo">
+        <img
+          style={{ height: 50, width: 150 }}
+          className="craftsman-logo-image ml-1"
+          src={require(`./../assets/images/craftsman-logo.png`)}
+          alt="Craftsman Logo"
+        />
       </div>
     </div>
   );

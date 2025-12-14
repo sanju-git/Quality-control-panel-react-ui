@@ -54,3 +54,21 @@ export const uploadLabResults = async (formData) => {
   res = await res.json();
   return res;
 };
+
+
+export const getCharacteristicsAPI = async (operations) => {
+  let res = await fetch(NODE_URL + "get-characteristics", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      operations
+    }),
+  });
+  if (!res.ok) {
+    throw new Error("Get data failed: " + res.status);
+  }
+  res = await res.json();
+  return res;
+}

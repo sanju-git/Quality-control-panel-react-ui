@@ -1,18 +1,32 @@
-import reportPdf from "../../assets/OP40 SPC.pdf";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function ReportsView() {
+export default function ReportsView({ reportURL }) {
   let showReport = false;
+  if (reportURL != null && reportURL.length >= 1) showReport = true;
   if (showReport) {
     return (
-      <div style={{ height: "44vw" }} className="p-3 border rounded w-100">
-        <iframe
-          src={reportPdf}
-          title="PDF Viewer"
-          width="100%"
-          height="100%"
-          style={{ border: "none" }}
-        />
-      </div>
+      <>
+        <div style={{ height: "100%" }} className="p-3 border rounded w-100">
+          <div style={{ height: "100%" }}>
+            <embed
+              src={`${reportURL}#toolbar=0&navpanes=0&scrollbar=0`}
+              type="application/pdf"
+              width="100%"
+              height="100%"
+            />
+          </div>
+        </div>
+        <div className="mt-2 d-flex justify-content-end">
+          <a href={reportURL} download="PartHistoryReport.pdf">
+            <button className="btn btn-dark btn-sm mx-2"><FontAwesomeIcon
+              style={{ color: "#fff", height: 18, width: 18 }}
+              icon={faDownload}
+            />
+              &nbsp;&nbsp;Download</button>
+          </a>
+        </div>
+      </>
     );
   } else {
     return (

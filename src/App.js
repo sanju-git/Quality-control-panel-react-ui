@@ -2,6 +2,7 @@ import "./App.css";
 import Home from "./components/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import PartTraceabilityContainer from "./components/PartTraceability/PartTraceabilityContainer";
 import QualityControlDashboard from "./components/QualityControl/QualityControlDashboard";
 import OPLineChartConatiner from "./components/QualityControl/OPLineChartConatiner";
@@ -48,7 +49,7 @@ function App() {
           <div className="header-container">
             <Header />
           </div>
-          <div className="pt-3" style={{ height: "93%" }}>
+          <div className="main-content pt-3">
             <Routes>
               <Route
                 path="/"
@@ -72,6 +73,7 @@ function App() {
               />
             </Routes>
           </div>
+          <Footer />
         </div>
       </div>
     </Router>

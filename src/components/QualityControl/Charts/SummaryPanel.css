@@ -1,38 +1,66 @@
 .summary-panel-card {
-  padding: 1em;
-  width: 100%;
-  margin: auto;
-  border-radius: 5px;
-  color: #063b81;
-  border: 2px solid #063b81;
-  background-color: #fff;
+  padding: 1rem;
+  /* Compact padding */
+  border-radius: var(--radius-lg);
+  color: var(--text-main);
+  background-color: var(--bg-surface);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Center content */
+  height: 100%;
+  transition: all var(--transition-fast);
 }
 
-.green-card{
-  border: 2px solid #1c9e47;
-  color: #1c9e47;
-  background-color: #f5faf6;
+.summary-panel-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
-.red-card{
-  border: 2px solid #e84447;
-  color: #e84447;
-  background-color: #fff7f5;
+.summary-label {
+  font-size: 0.75rem;
+  /* Smaller label */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 0.25rem;
+  /* Reduced margin */
 }
 
-.quality-bar {
-  height: 5px;
-  width: 100%;
+.summary-value {
+  font-size: 1.75rem;
+  /* Smaller value */
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.2;
 }
 
-.summary-panel-quality-card {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
+/* Status variants */
+.summary-panel-card.success .summary-value {
+  color: var(--primary);
 }
 
-/* Remove bottom border on md and up */
-@media (min-width: 768px) {
-  .summary-panel-quality-card {
-    border-bottom: none;
-  }
+.summary-panel-card.danger .summary-value {
+  color: #ef4444;
+  /* Red 500 */
+}
+
+.summary-panel-card.neutral .summary-value {
+  color: var(--text-main);
+}
+
+.summary-panel-card.danger {
+  border-bottom: 4px solid #ef4444;
+}
+
+.summary-panel-card.success {
+  border-bottom: 4px solid var(--primary);
+}
+
+.summary-panel-card.neutral {
+  border-bottom: 4px solid var(--text-secondary);
 }

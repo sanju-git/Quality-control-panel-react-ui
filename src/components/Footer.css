@@ -2,10 +2,14 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* move content to right end */
-  padding: 12px; /* uniform padding on all sides */
+  justify-content: flex-end;
+  /* move content to right end */
+  padding: 6px 12px;
+  /* compact padding */
   box-sizing: border-box;
-  background: transparent;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+  border-top: 1px solid rgba(15, 23, 42, 0.04);
+  /* box-shadow: 0 -6px 18px rgba(16,24,40,0.04); removed heavy shadow */
 }
 
 .footer-content {
@@ -16,11 +20,17 @@
 
 .powered-by {
   font-size: 14px;
-  color: #333;
+  color: var(--muted);
+  font-weight: 600;
 }
 
 .footer-logo {
-  height: 56px; /* increased size slightly */
+  height: 40px;
   width: auto;
   object-fit: contain;
+}
+
+/* Make sure footer doesn't introduce extra scroll by staying within layout */
+.footer {
+  flex-shrink: 0;
 }

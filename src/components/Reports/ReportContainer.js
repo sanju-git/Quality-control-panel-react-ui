@@ -37,14 +37,14 @@ export default function ReportContainer() {
   };
 
   return (
-    <div className="container-fluid mt-2">
-      <div className="row">
-        <div className="col-md-4">
-          <div style={{ height: "85vh" }} className="d-flex align-items-center">
+    <div className="container-fluid h-100 d-flex flex-column" style={{ padding: "0.5rem 2rem 2rem 2rem", overflow: "hidden" }}>
+      <div className="row h-100">
+        <div className="col-md-4 h-100">
+          <div className="h-100 d-flex align-items-center">
             <ReportsFilter filters={filters} setFilters={setFilters} generateReport={generateReport} />
           </div>
         </div>
-        <div className="col-md-8">
+        <div className="col-md-8 h-100">
           <ReportsView reportURL={reportURL} />
         </div>
       </div>

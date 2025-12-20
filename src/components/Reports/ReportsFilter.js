@@ -48,8 +48,7 @@ export default function ReportsFilter({ filters, setFilters, generateReport }) {
         <strong>Filters</strong>
       </div>
       <div
-        style={{ backgroundColor: "#fff" }}
-        className="mt-1 p-3 border rounded"
+        className="mt-1 p-3 border-bottom"
       >
         <div className="mb-3">
           <label className="form-label fw-bold">Operation Name</label>
@@ -134,7 +133,7 @@ export default function ReportsFilter({ filters, setFilters, generateReport }) {
         <div className="d-flex justify-content-end">
           <button
             onClick={() => generateReport(filters)}
-            className="btn btn-dark btn-sm mx-2"
+            className="btn btn-primary btn-sm mx-2"
           >
             Generate Report
           </button>

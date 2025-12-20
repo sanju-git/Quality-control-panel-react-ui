@@ -56,47 +56,49 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="container-fluid" style={{ fontFamily: "Arial" }}>
-      <div className="col-12 mb-3">
-        <div className="h-100 d-flex flex-column justify-content-between">
-          <QualityDashboardFilters
-            applyFilters={applyFilters}
-            showPartHistory={showPartHistory}
-          />
-        </div>
+    <div className="container-fluid dashboard-container">
+      <div className="col-12 mb-4">
+        <QualityDashboardFilters
+          applyFilters={applyFilters}
+          showPartHistory={showPartHistory}
+        />
       </div>
+
       {metaData &&
-      Object.entries(metaData).length >= 1 &&
-      opData &&
-      opData.length >= 1 ? (
+        Object.entries(metaData).length >= 1 &&
+        opData &&
+        opData.length >= 1 ? (
         <>
-          <div className="row g-4 d-flex align-items-stretch">
-            <div className="col-12 col-md-3 h-100">
-              <GaugeChart
-                value={metaData.overallQuality}
-                thresholds={gauge.thresholds}
-                colors={gauge.colors}
-              />
-            </div>
-            <div className="col-12 col-md-8 h-100 mt-5">
-              <SummaryPanel metaData={metaData} />
+          <div className="dashboard-section">
+            <div className="row g-4 align-items-center">
+              <div className="col-12 col-md-4 col-lg-3 d-flex justify-content-center border-end-md">
+                <GaugeChart
+                  value={metaData.overallQuality}
+                  thresholds={gauge.thresholds}
+                  colors={gauge.colors}
+                />
+              </div>
+              <div className="col-12 col-md-8 col-lg-9">
+                <SummaryPanel metaData={metaData} />
+              </div>
             </div>
           </div>
 
-          <div className="mt-4">
-            <strong>Quality by Operation</strong>
-            <div className="qd-cards mt-1">
+          <div className="cards-area-wrapper">
+            <h4 className="section-title">Quality by Operation</h4>
+            <div className="qd-cards">
               {opData.map((op, index) => (
-                <OperationCard op={op} openOPCardChart={openOPCardChart} />
+                <OperationCard key={index} op={op} openOPCardChart={openOPCardChart} />
               ))}
             </div>
           </div>
         </>
       ) : (
-        <div className="text-center">
-          No data available for the given selection.
+        <div className="text-center p-5 text-muted">
+          <p>No data available for the given selection.</p>
         </div>
       )}
+
       {showChartPopup && (
         <NewModal
           closePopup={closeModal}

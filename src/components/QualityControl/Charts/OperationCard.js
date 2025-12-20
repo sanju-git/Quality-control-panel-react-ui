@@ -8,39 +8,34 @@ const OperationCard = (props) => {
     <div
       className="op-card cursor-pointer"
       onClick={() => openOPCardChart(operationName)}
+      role="button"
+      tabIndex={0}
     >
-      <strong>
-        <pre>{operationName}</pre>
-      </strong>
-      <div className="op-metric">
-        <strong style={{ fontSize: 30 }}>{total}</strong>
-        <br />
-        <pre>Total Parts</pre>
-      </div>
-      <div className="d-flex justify-content-between op-metric green-card my-2">
-        <div>
-          <pre>OK parts</pre>
-        </div>
-        <div>{okCount}</div>
-      </div>
-      <div className="d-flex justify-content-between op-metric red-card my-2">
-        <div>
-          <pre>NOK parts</pre>
-        </div>
-        <div>{nokCount}</div>
-      </div>
-      <div className="d-flex justify-content-between op-metric green-card my-2">
-        <div>
-          <pre>Success Rate</pre>
-        </div>
-        <div>{okPercentage + "%"}</div>
+      <div className="op-title">{operationName}</div>
+
+      <div className="op-metric-main">
+        <div className="op-metric-value">{total}</div>
+        <div className="op-metric-label">Total Parts</div>
       </div>
 
-      <div className="d-flex justify-content-between op-metric red-card my-2">
-        <div>
-          <pre>Failure Rate</pre>
-        </div>
-        <div>{((nokCount / total) * 100).toFixed(2) + "%"}</div>
+      <div className="op-detail-row success">
+        <span className="detail-label">OK Parts</span>
+        <span className="detail-value">{okCount}</span>
+      </div>
+
+      <div className="op-detail-row danger">
+        <span className="detail-label">NOK Parts</span>
+        <span className="detail-value">{nokCount}</span>
+      </div>
+
+      <div className="op-detail-row success">
+        <span className="detail-label">Rate</span>
+        <span className="detail-value">{okPercentage}%</span>
+      </div>
+
+      <div className="op-detail-row danger">
+        <span className="detail-label">Fail</span>
+        <span className="detail-value">{((nokCount / total) * 100).toFixed(2)}%</span>
       </div>
     </div>
   );

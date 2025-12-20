@@ -123,9 +123,8 @@ const QualityDashboardFilters = ({ applyFilters, showPartHistory }) => {
               ].map((option) => (
                 <button
                   key={option}
-                  className={`dropdown-item ${
-                    selectedOption === option ? "active" : ""
-                  }`}
+                  className={`dropdown-item ${selectedOption === option ? "active" : ""
+                    }`}
                   onClick={() => handleSelect(option)}
                 >
                   {option}
@@ -169,7 +168,7 @@ const QualityDashboardFilters = ({ applyFilters, showPartHistory }) => {
         )}
 
         <button
-          className="btn btn-dark btn-sm mx-2"
+          className="btn btn-primary btn-sm mx-2"
           onClick={handleApply}
           disabled={!isApplyEnabled}
         >
@@ -178,9 +177,9 @@ const QualityDashboardFilters = ({ applyFilters, showPartHistory }) => {
       </div>
       <div
         onClick={() => showPartHistory()}
-        className="d-flex align-items-center justify-content-center"
+        className="d-flex align-items-center justify-content-center cursor-pointer"
       >
-        <button className="btn btn-md btn-outline-dark">
+        <button className="btn btn-ghost btn-sm">
           <SettingsIcon width="20" height="20" />
           &nbsp;<strong>Part history</strong>
         </button>

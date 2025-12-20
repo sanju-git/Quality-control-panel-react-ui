@@ -15,9 +15,9 @@ const PartHistoryFilters = () => {
         </div>
         <div className="mt-1">
           <button
-            className="btn btn-dark btn-sm mx-2"
-            // onClick={handleApply}
-            // disabled={!isApplyEnabled}
+            className="btn btn-primary btn-sm mx-2"
+          // onClick={handleApply}
+          // disabled={!isApplyEnabled}
           >
             Apply Filters
           </button>

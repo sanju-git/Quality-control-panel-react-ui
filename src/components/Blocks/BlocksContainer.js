@@ -18,37 +18,35 @@ const BlocksContainer = (props) => {
   };
 
   return (
-    <>
-      <div className="text-center pt-5">
+    <div className="blocks-wrapper">
+      <div className="text-center pt-4">
         <h1 className="welcome-text">
-          Welcome to <br /> Quality Control Cockpit!
+          Welcome to <br /> Quality Control Cockpit
         </h1>
       </div>
-      <div className="mt-5 blocks-container">
-        <div className="text-center block-select-text mb-3">
-          <h5>Please select a block to continue..</h5>
+      <div className="mt-4 blocks-container-inner">
+        <div className="block-select-text">
+          <h5>Select a module to continue</h5>
         </div>
-        <div className="d-flex align-items-center justify-content-center">
+        <div className="blocks-grid">
           {blocksData.map((b, index) => (
             <div
               key={b.name}
               onClick={() => handleClick(b.name, index)}
-              className={"block-card cursor-pointer d-flex align-items-center mx-3 mt-3"}
-              style={{
-                backgroundColor: colors[index % colors.length],
-              }}
+              className={`block-card cursor-pointer ${props.selectedBlock === b.name ? "selected" : ""}`}
+              title={`Select ${b.name}`}
             >
               <img
                 className="block-image"
                 src={require(`../../assets/images/${b.imageSrc}`)}
                 alt={b.name}
               />
-              <h3 style={{ padding: 20 }}>{b.name}</h3>
+              <h3 className="block-title">{b.name}</h3>
             </div>
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -53,7 +53,7 @@ function App() {
             <Routes>
               <Route
                 path="/"
-                element={<Home setBlock={handleBlockSelection} />}
+                element={<Home setBlock={handleBlockSelection} selectedBlock={block} />}
               />
               <Route path="/reports" element={<ReportContainer />} />
               <Route path="/block/:blockName" element={<NavigationTab />} />

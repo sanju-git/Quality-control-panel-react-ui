@@ -1,47 +1,90 @@
 .op-card {
-  flex: 1 1 200px;
-  max-width: 15em;
-  min-width: 13em;
-  margin: 0.5rem;
-  border-radius: 10px;
+  flex: 0 0 240px;
+  /* Reduced width */
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
   padding: 1rem;
-  background-color: #f9f9f9;
-  text-align: center;
-  transition: box-shadow 0.2s ease;
-  border: 1px solid #bbbbbb;
+  /* Reduced padding */
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* Reduced gap */
+  position: relative;
+  overflow: hidden;
 }
-
 
 .op-card:hover {
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
 }
 
-.status-bar {
-  height: 4px;
-  width: 100%;
+.op-title {
+  font-size: 1rem;
+  /* Reduced font size */
+  font-weight: 700;
+  color: var(--text-main);
+  text-align: center;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 0.25rem;
 }
 
-.op-metric {
-  padding: 0.5em;
-  width: 100%;
-  margin: auto;
-  border-radius: 5px;
-  color: #063b81;
-  font-size: 15px;
+.op-metric-main {
+  text-align: center;
+  padding: 0.5rem;
+  /* Reduced padding */
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, transparent 100%);
+  border-radius: var(--radius-md);
 }
 
-.green-card{
-  border: 1px solid #1c9e47;
-  color: #1c9e47;
-  background-color: #f5faf6;
+.op-metric-value {
+  font-size: 2rem;
+  /* Reduced from 2.5rem */
+  font-weight: 800;
+  color: var(--primary-dark);
+  line-height: 1;
 }
 
-.red-card{
-  border: 1px solid #e84447;
-  color: #e84447;
-  background-color: #fff7f5;
+.op-metric-label {
+  font-size: 0.75rem;
+  /* Reduced from 0.85rem */
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  margin-top: 0.25rem;
 }
 
-pre{
-  margin-bottom: 0px !important;
+.op-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  /* Reduced padding */
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  /* Reduced font size */
+  font-weight: 500;
+}
+
+.op-detail-row.success {
+  background-color: #ecfdf5;
+  color: #047857;
+}
+
+.op-detail-row.danger {
+  background-color: #fef2f2;
+  color: #b91c1c;
+}
+
+.detail-label {
+  opacity: 0.9;
+}
+
+.detail-value {
+  font-weight: 700;
 }

@@ -58,121 +58,92 @@ const SidenavView = (props) => {
 
   return (
     <div className={`sidenav-container ${isCollapsed ? "collapsed" : ""}`}>
-      <div className="top-icons-container d-flex">
-        <div onClick={toggleSidebar}>
+      <div className="top-icons-container">
+        <div className="sidebar-toggle-icon" onClick={toggleSidebar}>
           {isCollapsed ? (
             <MenuClose
               fill="#ffffff"
-              stroke="#ffffff"
-              style={{
-                height: 40,
-                width: 40,
-                cursor: "pointer",
-                paddingTop: "3px",
-                paddingLeft: "3px",
-                paddingRight: "3px",
-              }}
+              width="24"
+              height="24"
             />
           ) : (
             <MenuOpen
               fill="#ffffff"
-              style={{
-                height: 40,
-                width: 40,
-                cursor: "pointer",
-                paddingTop: "3px",
-                paddingLeft: "3px",
-                paddingRight: "3px",
-                marginLeft: "3px",
-              }}
+              width="24"
+              height="24"
             />
           )}
         </div>
-        {/* {!isCollapsed && <div>
-          <img
-            style={{ height: 50, width: 150 }}
-            className="craftsman-logo-image ml-1"
-            src={require(`./../assets/images/craftsman-logo.png`)}
-          />
-        </div>} */}
       </div>
 
-      {!isCollapsed && (
-        <div className="main-icons-container">
-          <div
-            onClick={() => navigatePath("/", "home")}
-            className={
-              activeMenu === "home"
-                ? "icon-container cursor-pointer active-menu"
-                : "icon-container cursor-pointer"
-            }
-          >
-            <FontAwesomeIcon
-              style={{ color: "#fff", height: 18, width: 18 }}
-              icon={faHouse}
-            />
-            &nbsp;&nbsp; Home
-          </div>
-          <div
-            onClick={() => navigatePath("/part/" + block, "pt")}
-            className={
-              activeMenu === "pt"
-                ? "icon-container cursor-pointer active-menu"
-                : "icon-container cursor-pointer"
-            }
-          >
-            <FontAwesomeIcon
-              style={{ color: "#fff", height: 18, width: 18 }}
-              icon={faMagnifyingGlass}
-            />
-            &nbsp;&nbsp; Part Traceability
-          </div>
-          <div
-            // onClick={() => setActiveMenu("lr")}
-            onClick={() => navigatePath("/lab-results", "lr")}
-            className={
-              activeMenu === "lr"
-                ? "icon-container cursor-pointer active-menu"
-                : "icon-container cursor-pointer"
-            }
-          >
-            <FontAwesomeIcon
-              style={{ color: "#fff", height: 18, width: 18 }}
-              icon={faFlask}
-            />
-            &nbsp;&nbsp; Lab Results
-          </div>
-          <div
-            onClick={() => navigatePath("/quality-dashboard/" + block, "qc")}
-            className={
-              activeMenu === "qc"
-                ? "icon-container cursor-pointer active-menu"
-                : "icon-container cursor-pointer"
-            }
-          >
-            <FontAwesomeIcon
-              style={{ color: "#fff", height: 18, width: 18 }}
-              icon={faCircleCheck}
-            />
-            &nbsp;&nbsp; Quality Control
-          </div>
-          <div
-            // onClick={() => setActiveMenu("d")}
-            onClick={() => navigatePath("/reports")}
-            className={
-              activeMenu === "r"
-                ? "icon-container cursor-pointer active-menu"
-                : "icon-container cursor-pointer"
-            }
-          >
-            <FontAwesomeIcon
-              style={{ color: "#fff", height: 18, width: 18 }}
-              icon={faChartSimple}
-            />
-            &nbsp;&nbsp; Reports
-          </div>
+
+      <div className="main-icons-container">
+        <div
+          onClick={() => navigatePath("/", "home")}
+          className={`icon-container ${activeMenu === "home" ? "active-menu" : ""}`}
+          title="Home"
+          data-tooltip="Home"
+        >
+          <FontAwesomeIcon
+            icon={faHouse}
+            style={{ width: '18px', height: '18px' }}
+            title={isCollapsed ? "Home" : ""}
+          />
+          {!isCollapsed && <span className="ml-2">Home</span>}
         </div>
-      )}
+        <div
+          onClick={() => navigatePath("/part/" + block, "pt")}
+          className={`icon-container ${activeMenu === "pt" ? "active-menu" : ""}`}
+          title="Part Traceability"
+          data-tooltip="Part Traceability"
+        >
+          <FontAwesomeIcon
+            icon={faMagnifyingGlass}
+            style={{ width: '18px', height: '18px' }}
+            title={isCollapsed ? "Part Traceability" : ""}
+          />
+          {!isCollapsed && <span className="ml-2">Part Traceability</span>}
+        </div>
+        <div
+          onClick={() => navigatePath("/lab-results", "lr")}
+          className={`icon-container ${activeMenu === "lr" ? "active-menu" : ""}`}
+          title="Lab Results"
+          data-tooltip="Lab Results"
+        >
+          <FontAwesomeIcon
+            icon={faFlask}
+            style={{ width: '18px', height: '18px' }}
+            title={isCollapsed ? "Lab Results" : ""}
+          />
+          {!isCollapsed && <span className="ml-2">Lab Results</span>}
+        </div>
+        <div
+          onClick={() => navigatePath("/quality-dashboard/" + block, "qc")}
+          className={`icon-container ${activeMenu === "qc" ? "active-menu" : ""}`}
+          title="Quality Control"
+          data-tooltip="Quality Control"
+        >
+          <FontAwesomeIcon
+            icon={faCircleCheck}
+            style={{ width: '18px', height: '18px' }}
+            title={isCollapsed ? "Quality Control" : ""}
+          />
+          {!isCollapsed && <span className="ml-2">Quality Control</span>}
+        </div>
+        <div
+          onClick={() => navigatePath("/reports")}
+          className={`icon-container ${activeMenu === "r" ? "active-menu" : ""}`}
+          title="Reports"
+          data-tooltip="Reports"
+        >
+          <FontAwesomeIcon
+            icon={faChartSimple}
+            style={{ width: '18px', height: '18px' }}
+            title={isCollapsed ? "Reports" : ""}
+          />
+          {!isCollapsed && <span className="ml-2">Reports</span>}
+        </div>
+      </div>
     </div>
   );
 };

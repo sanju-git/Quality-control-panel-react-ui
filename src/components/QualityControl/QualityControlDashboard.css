@@ -1,50 +1,78 @@
-.title {
-  background-color: #f9f9f9
-;
-  height: 3.3em;
-  padding: 10px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+/* QualityControlDashboard.css */
+
+.dashboard-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0.5rem;
+  overflow: hidden;
 }
 
-/* Responsive operation cards container */
+/* Filters take natural height */
+.col-12.mb-4 {
+  margin-bottom: 0.5rem !important;
+  /* Reduced margin */
+  flex-shrink: 0;
+}
+
+/* Summary section shrinks/grows but shouldn't be too huge */
+.dashboard-section {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 0.75rem;
+  /* Reduced padding */
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 0 !important;
+  flex-shrink: 0;
+}
+
+.dashboard-section .row {
+  margin: 0;
+}
+
+/* Cards Area - takes remaining space */
+.cards-area-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  margin-top: 0.5rem;
+  /* Reduced margin */
+}
+
+.section-title {
+  font-size: 0.95rem;
+  /* Slightly smaller */
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Horizontal scroll container for operation cards */
 .qd-cards {
   display: flex;
-  flex-wrap: nowrap;            /* Prevent wrapping to new line */
-  overflow-x: auto;             /* Enable horizontal scrolling */
-  overflow-y: hidden;           /* Prevent vertical overflow */
-  white-space: nowrap;          /* Prevent internal wrapping */
-  gap: 1rem;
-  /* padding: 2rem 1em; */
-  /* background-color: #f9f9f9; */
-  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 0.75rem;
+  /* Reduced gap */
+  padding: 0.5rem;
+  align-items: center;
+  height: 100%;
+  align-content: center;
   scrollbar-width: thin;
-  scrollbar-color: #888 transparent;
 }
 
-
-/* Chrome, Edge, Safari */
-.qd-cards::-webkit-scrollbar {
-  width: 6px;
-}
-
-.qd-cards::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.qd-cards::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 3px;
-}
-
-/* Remove up/down buttons (arrows) */
-.qd-cards::-webkit-scrollbar-button {
-  display: none;
-  height: 0;
-}
-
-.equal-height-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
-  align-items: stretch;
+.gauge-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 100px;
+  /* Reduced min-height */
 }

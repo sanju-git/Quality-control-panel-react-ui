@@ -34,29 +34,21 @@ const LabResultsContainer = () => {
   return (
     <div>
       <div className="upload-details">
-        <div className="d-flex justify-content-center align-items-center">
+        <div className="d-flex justify-content-center align-items-end gap-3 mb-4 p-4 border-bottom">
           <div className="col-md-3">
-            <label className="form-label fw-bold">Part Number</label>
+            <label className="form-label fw-bold text-secondary text-uppercase small">Part Number</label>
             <Input
               placeholder={"Enter part number"}
               setPartNumberFunc={setPartNumberFunc}
               icon={false}
             />
           </div>
-          <div className="ml-1 col-md-3">
-            <label className="form-label fw-bold">Placeholder</label>
+          <div className="col-md-3">
+            <label className="form-label fw-bold text-secondary text-uppercase small">Placeholder</label>
             <Select
               options={placeholders}
-              // value={
-              //   placeholders.find((p) => p.value === filters.placeholder) ||
-              //   null
-              // }
-              // onChange={(selected) =>
-              //   setFilters((prev) => ({
-              //     ...prev,
-              //     placeholder: selected ? selected.value : "",
-              //   }))
-              // }
+              className="react-select-container"
+              classNamePrefix="react-select"
             />
           </div>
         </div>

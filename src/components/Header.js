@@ -28,23 +28,20 @@ const Header = () => {
   }, [location]);
   return (
     <div className="header">
-      <div className="mx-3 pt-1 page-name d-flex align-item-center justify-content-center">
+      <div className="header-left">
         {pageName && pageName.length >= 1 && (
-          <>
-            <div className="cursor-pointer" onClick={() => navigate(-1)}>
+          <div className="page-name">
+            <div className="back-button-wrapper" onClick={() => navigate(-1)} title="Go Back">
               <FontAwesomeIcon icon={faArrowLeft} />
             </div>
-            <div className="mx-3 my-3">
-              <h5>{pageName}</h5>
-            </div>
-          </>
+            <h5 className="page-title-text">{pageName}</h5>
+          </div>
         )}
       </div>
 
       <div className="header-logo">
         <img
-          style={{ height: 50, width: 150 }}
-          className="craftsman-logo-image ml-1"
+          className="craftsman-logo-image"
           src={require(`./../assets/images/craftsman-logo.png`)}
           alt="Craftsman Logo"
         />

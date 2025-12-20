@@ -54,12 +54,16 @@ const IndividualPartData = ({
                 <td>{param.value}</td>
                 <td>{param.lowerLimitValue}</td>
                 <td>{param.upperLimitValue}</td>
-                <td style={{background:param.status=="OK"?"#AFE1AF":"#EE4B2B"}}>{param.status}</td>
+                <td>
+                  <span className={`badge ${param.status === "OK" ? "badge-success" : "badge-danger"}`}>
+                    {param.status}
+                  </span>
+                </td>
               </tr>
             ))
           ) : (
             <tr>
-              <td colSpan="5">No data available</td>
+              <td colSpan="5" className="text-center text-muted">No data available</td>
             </tr>
           )}
         </tbody>
